@@ -1,0 +1,27 @@
+{
+  "name": "limbic-player",
+  "title": "Limbic Player",
+  "description": "multi content player for limbic.cc",
+  "version": "0.1.0",
+  "homepage": "https://github.com/zk33/limbic-player",
+  "author": {
+    "name": "zk33",
+    "email": "ymzktkak@gmail.com",
+    "url": "http://en-gawa.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zk33/limbic-player.git"
+  },
+  "bugs": "https://github.com/zk33/limbic-player/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/zk33/limbic-player/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
