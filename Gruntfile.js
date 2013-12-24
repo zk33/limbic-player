@@ -26,9 +26,11 @@ module.exports = function(grunt) {
       },
     },
     connect: {
-      options: {
-        port:9000,
-        base: 'sample'
+      server:{
+        options: {
+          port:8000,
+          open:'http://localhost:8000/sample/'
+        }
       }
     },
     uglify: {
