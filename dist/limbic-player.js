@@ -1,11 +1,6 @@
-/*
- * limbic-player
- * https://github.com/zk33/limbic-player
- *
- * Copyright (c) 2013 zk33
- * Licensed under the MIT license.
- */
-
+/*! Limbic Player - v0.1.0 - 2013-12-24
+* https://github.com/zk33/limbic-player
+* Copyright (c) 2013 zk33; Licensed MIT */
 (function($) {
 
   // Collection method.

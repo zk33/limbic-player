@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     // Metadata.
-    pkg: grunt.file.readJSON('limbic-player.jquery.json'),
+    pkg: grunt.file.readJSON('jquery.limbicPlayer.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
@@ -24,6 +24,12 @@ module.exports = function(grunt) {
         src: ['src/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
       },
+    },
+    connect: {
+      options: {
+        port:9000,
+        base: 'sample'
+      }
     },
     uglify: {
       options: {
@@ -70,7 +76,25 @@ module.exports = function(grunt) {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'qunit']
       },
+      compass: {
+        files: ['sass/**/*.scss','sass/**/*.sass'],
+        tasks: ['compass:dist']
+      }
     },
+    compass: {
+      options: {
+        sassDir: 'sass',
+        cssDir: 'dist',
+        imagesDir: 'dist/img',
+        javascriptsDir: 'dist',
+        fontsDir: 'dist',
+        outputStyle: 'compact',
+        noLineComments: false,
+        relativeAssets: true,
+        debugInfo: false
+      },
+      dist: {}
+    }
   });
 
   // These plugins provide necessary tasks.
@@ -80,8 +104,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-notify');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('default', ['connect','watch']);
+  grunt.registerTask('build', ['jshint', 'qunit', 'clean', 'concat', 'uglify','compass']);
 
 };

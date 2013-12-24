@@ -30,20 +30,20 @@
   test('is chainable', function() {
     expect(1);
     // Not a bad test to run on collection methods.
-    strictEqual(this.elems.limbic_player(), this.elems, 'should be chainable');
+    strictEqual(this.elems.limbicPlayer(), this.elems, 'should be chainable');
   });
 
   test('is awesome', function() {
     expect(1);
-    strictEqual(this.elems.limbic_player().text(), 'awesome0awesome1awesome2', 'should be awesome');
+    strictEqual(this.elems.limbicPlayer().text(), 'awesome0awesome1awesome2', 'should be awesome');
   });
 
   module('jQuery.limbic_player');
 
   test('is awesome', function() {
     expect(2);
-    strictEqual($.limbic_player(), 'awesome.', 'should be awesome');
-    strictEqual($.limbic_player({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
+    strictEqual($.limbicPlayer(), 'awesome.', 'should be awesome');
+    strictEqual($.limbicPlayer({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
   });
 
   module(':limbic_player selector', {
@@ -56,7 +56,7 @@
   test('is awesome', function() {
     expect(1);
     // Use deepEqual & .get() when comparing jQuery objects.
-    deepEqual(this.elems.filter(':limbic_player').get(), this.elems.last().get(), 'knows awesome when it sees it');
+    deepEqual(this.elems.filter(':limbicPlayer').get(), this.elems.last().get(), 'knows awesome when it sees it');
   });
 
 }(jQuery));
